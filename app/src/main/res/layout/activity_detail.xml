@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -10,7 +12,16 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cns_poster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingBottom="20dp">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_poster"
@@ -22,19 +33,30 @@
                 app:layout_constraintDimensionRatio="3:4"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_grd_title"
+                app:layout_constraintBottom_toBottomOf="@id/img_poster"
+                app:layout_constraintStart_toStartOf="@id/img_poster" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginBottom="20dp"
-                android:ellipsize="marquee"
-                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:alpha="0"
+                android:padding="20dp"
+                android:gravity="bottom"
                 android:text="Batman"
                 android:textColor="@color/movie_title"
                 android:textSize="@dimen/ts_movie_title_large"
+                android:translationX="100dp"
                 app:layout_constraintBottom_toBottomOf="@id/img_poster"
-                app:layout_constraintStart_toStartOf="@id/img_poster" />
+                app:layout_constraintStart_toStartOf="@id/img_poster"
+                tool:alpha="1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_year"
@@ -42,11 +64,173 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/year"
-                android:textColor="@color/default_text"
+                android:textColor="@color/movie_subtitle"
                 android:textSize="@dimen/ts_default_text"
-                app:layout_constraintStart_toStartOf="@id/img_poster"
-                app:layout_constraintTop_toBottomOf="@id/img_poster" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cns_poster"
+                tool:text="Year" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/bg_type"
+                android:textColor="@color/movie_subtitle_invert"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cns_poster"
+                tool:text="Type" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="txt_director_label, txt_genre_label,txt_duration_label, txt_released_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_director_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/director"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintEnd_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@id/txt_year" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                app:layout_constraintTop_toTopOf="@id/txt_director_label"
+                tool:text="Zack Snyder" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_released_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/released"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintEnd_toStartOf="@id/barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_director_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_released"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                app:layout_constraintTop_toTopOf="@id/txt_released_label"
+                tool:text="25 Mar 2016" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_duration_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/duration"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintEnd_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@id/txt_released_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                app:layout_constraintTop_toTopOf="@id/txt_duration_label"
+                tool:text="152 min" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_genre_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/genre"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintEnd_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@id/txt_duration_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                app:layout_constraintTop_toTopOf="@id/txt_genre_label"
+                tool:text="Action, Adventure, Sci-Fi" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_writer_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/writer"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintBottom_toBottomOf="@id/txt_writer"
+                app:layout_constraintEnd_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@id/txt_genre_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_writer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                app:layout_constraintTop_toTopOf="@id/txt_writer_label"
+                tool:text="Chris Terrio, David S. Goyer, Bob Kane (Batman created by), Bill Finger (Batman created by), Jerry Siegel (Superman created by), Joe Shuster (Superman created by), William Moulton Marston (character created by: Wonder Woman)" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_stars_label"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/stars"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintBottom_toBottomOf="@id/txt_stars"
+                app:layout_constraintEnd_toStartOf="@id/barrier"
+                app:layout_constraintTop_toBottomOf="@id/txt_writer_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/movie_subtitle"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                app:layout_constraintTop_toTopOf="@id/txt_stars_label"
+                tool:text="Ben Affleck, Henry Cavill, Amy Adams, Jesse Eisenberg" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

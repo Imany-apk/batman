@@ -1,7 +1,7 @@
 <resources>
 
     <dimen name="app_bar_height">300dp</dimen>
-    <dimen name="ts_movie_title_large">32sp</dimen>
+    <dimen name="ts_movie_title_large">28sp</dimen>
     <dimen name="ts_movie_title_medium">16sp</dimen>
     <dimen name="ts_movie_subtitle">12sp</dimen>
     <dimen name="ts_default_text">14sp</dimen>

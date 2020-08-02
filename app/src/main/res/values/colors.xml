@@ -7,6 +7,7 @@
     <color name="movie_item_bg">#2c2c2c</color>
     <color name="movie_title">#FFFFFF</color>
     <color name="movie_subtitle">#BCBCBC</color>
+    <color name="movie_subtitle_invert">#363535</color>
     <color name="default_text">#2c2c2c</color>
 
 </resources>

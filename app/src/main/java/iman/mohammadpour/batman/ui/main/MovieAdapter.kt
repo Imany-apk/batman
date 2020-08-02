@@ -24,13 +24,13 @@ class MovieAdapter(
 
         fun bind(movie: MovieSummary) = with(itemView) {
             img_poster.load(movie.poster)
-            img_poster.transitionName = "transitionName#${movie.imdbID}"
+            img_poster.transitionName = "posterTransitionName#${movie.imdbID}"
             txt_title.text = movie.title
             txt_title.isSelected = true
             txt_year.text = movie.year
 
             setOnClickListener {
-                listener.onMovieClicked(movie, img_poster, img_poster.transitionName)
+                listener.onMovieClicked(movie, img_poster)
             }
         }
     }

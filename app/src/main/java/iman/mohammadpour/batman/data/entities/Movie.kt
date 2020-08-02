@@ -2,7 +2,6 @@ package iman.mohammadpour.batman.data.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
 import iman.mohammadpour.batman.data.entities.converters.RatingConverter
@@ -11,15 +10,21 @@ import iman.mohammadpour.batman.data.entities.converters.RatingConverter
  *  created by Iman Mohammadpour at 2020/Aug/02
  */
 
-@Entity(tableName = "movies")
+@Entity(
+    tableName = "movies",
+    primaryKeys = ["id", "imdb_id"]
+)
 @TypeConverters(
     RatingConverter::class
 )
 data class Movie(
 
+    @SerializedName("id")
+    @ColumnInfo(name = "id")
+    val id: Long = 1,
+
     @SerializedName("imdbID")
     @ColumnInfo(name = "imdb_id")
-    @PrimaryKey(autoGenerate = false)
     val imdbID: String,
 
     @SerializedName("Title")
@@ -116,5 +121,8 @@ data class Movie(
 
     @SerializedName("Response")
     @ColumnInfo(name = "response")
-    var response: String?
+    var response: String?,
+
+    @ColumnInfo(name = "fetched_before")
+    var fetchedBefore: Boolean = false
 ) : Rsp()

@@ -24,17 +24,24 @@ class DetailViewModel(
     private val _onMovieError = MutableLiveData<String>()
 
 
-    fun onViewCreated(imdbID: String, hasInternetAccess: Boolean) {
+    fun onViewCreated(
+        imdbID: String,
+        hasInternetAccess: Boolean,
+        fromLocal: Boolean
+    ) {
 
         repository.findById(imdbID).tell {
             _onLiveMovie.postValue(it)
         }
 
+        if (fromLocal)
+            return
+
         if (!hasInternetAccess) {
             _onMovieError.postValue("There is no Internet connection")
             return
         }
-        repository.search("batman").tell {
+        repository.getMovie(imdbID).tell {
             if (it is MovieResult.Error) {
                 _onMovieError.postValue(it.e.message)
             }

@@ -47,17 +47,18 @@ class MainActivity : AppCompatActivity(), MovieItemClickListener {
 
     }
 
-    override fun onMovieClicked(movie: MovieSummary, img: ImageView, transitionName: String) {
+    override fun onMovieClicked(movie: MovieSummary, img: ImageView) {
 
         Intent(this, DetailActivity::class.java).apply {
             putExtra(DetailActivity.EXTRA_MOVIE_ID, movie.imdbID)
-            putExtra(DetailActivity.EXTRA_MOVIE_POSTER, movie.poster)
-            putExtra(DetailActivity.EXTRA_MOVIE_POSTER_TRANSITION_NAME, transitionName)
+            putExtra(DetailActivity.EXTRA_POSTER, movie.poster)
+            putExtra(DetailActivity.EXTRA_FROM_LOCAL, movie.fetchedBefore)
+            putExtra(DetailActivity.EXTRA_POSTER_TRANSITION_NAME, img.transitionName)
 
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 this@MainActivity,
                 img,
-                transitionName
+                img.transitionName
             )
             startActivity(this, options.toBundle());
         }

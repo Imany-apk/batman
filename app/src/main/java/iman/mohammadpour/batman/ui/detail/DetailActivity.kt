@@ -19,8 +19,9 @@ class DetailActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_MOVIE_ID = "EXTRA_MOVIE_ID"
-        const val EXTRA_MOVIE_POSTER = "EXTRA_MOVIE_POSTER"
-        const val EXTRA_MOVIE_POSTER_TRANSITION_NAME = "EXTRA_MOVIE_POSTER_TRANSITION_NAME"
+        const val EXTRA_POSTER = "EXTRA_MOVIE_POSTER"
+        const val EXTRA_FROM_LOCAL = "EXTRA_FROM_LOCAL"
+        const val EXTRA_POSTER_TRANSITION_NAME = "EXTRA_POSTER_TRANSITION_NAME"
     }
 
     private val onMovieDetailRetrieved = Observer<Movie> {
@@ -28,7 +29,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private val onMovieDetailError = Observer<String> {
-        Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, it, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,24 +41,36 @@ class DetailActivity : AppCompatActivity() {
         vm.onLiveMovie.observe(this, onMovieDetailRetrieved)
         vm.onMovieError.observe(this, onMovieDetailError)
 
-        intent?.extras?.getString(EXTRA_MOVIE_POSTER_TRANSITION_NAME)?.let {
-            img_poster.transitionName = it
+        intent?.extras?.getString(EXTRA_POSTER_TRANSITION_NAME)?.let {
+            cns_poster.transitionName = it
         } ?: finish()
 
-        intent?.extras?.getString(EXTRA_MOVIE_POSTER)?.let {
+        intent?.extras?.getString(EXTRA_POSTER)?.let {
             img_poster.load(it)
         } ?: finish()
 
         intent?.extras?.getString(EXTRA_MOVIE_ID)?.let {
-            vm.onViewCreated(it, hasInternetAccess())
+            val fromLocal = intent?.extras?.getBoolean(EXTRA_FROM_LOCAL, false) ?: false
+            vm.onViewCreated(it, hasInternetAccess(), fromLocal)
         } ?: finish()
 
     }
 
     private fun updateView(movie: Movie) {
         txt_title.text = movie.title
+        txt_title.animate().alpha(1f).translationX(0f).duration = 600
         supportActionBar?.title = movie.title
-        txt_title.isSelected = true
+//        txt_title.isSelected = true
+        txt_year.text = movie.year
+        txt_type.text = movie.type
+
+        txt_director.text = movie.director
+        txt_released.text = movie.released
+        txt_duration.text = movie.runtime
+        txt_genre.text = movie.genre
+        txt_writer.text = movie.writer
+        txt_stars.text = movie.actors
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -21,7 +21,7 @@ interface MovieDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun save(movie: Movie)
 
-    @Query("SELECT * FROM movies")
+    @Query("SELECT * FROM movies ORDER BY id")
     fun findAll(): LiveData<List<MovieSummary>>
 
     @Query("SELECT * FROM movies WHERE imdb_id=:id")

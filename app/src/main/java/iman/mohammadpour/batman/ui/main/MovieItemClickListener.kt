@@ -9,6 +9,6 @@ import iman.mohammadpour.batman.data.entities.MovieSummary
 
 interface MovieItemClickListener {
 
-    fun onMovieClicked(movie: MovieSummary, img: ImageView, transitionName: String)
+    fun onMovieClicked(movie: MovieSummary, img: ImageView)
 
 }

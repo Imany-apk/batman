@@ -22,6 +22,7 @@ class MovieRepositoryImpl(
 
     override fun getMovie(imdbID: String) = remote(api.getMovieDetail(id = imdbID)) { movie ->
         movie?.let {
+            it.fetchedBefore = true
             dao.save(it)
         }
     }

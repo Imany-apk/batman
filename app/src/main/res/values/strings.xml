@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Batman</string>
     <string name="poster_transition_name">poster_transition_name</string>
-    <string name="year">Year</string>
+    <string name="released">"Released: "</string>
+    <string name="duration">"Duration: "</string>
+    <string name="genre">"Genre: "</string>
+    <string name="director">"Director: "</string>
+    <string name="writer">"Writer: "</string>
+    <string name="stars">"Stars: "</string>
 </resources>

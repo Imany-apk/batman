@@ -1,7 +1,6 @@
 package iman.mohammadpour.batman.data.entities
 
 import androidx.room.ColumnInfo
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 /**
@@ -9,9 +8,12 @@ import com.google.gson.annotations.SerializedName
  */
 data class MovieSummary(
 
+    @SerializedName("id")
+    @ColumnInfo(name = "id")
+    val id: Long = 1,
+
     @SerializedName("imdbID")
     @ColumnInfo(name = "imdb_id")
-    @PrimaryKey(autoGenerate = false)
     val imdbID: String,
 
     @SerializedName("Title")
@@ -28,5 +30,8 @@ data class MovieSummary(
 
     @SerializedName("Poster")
     @ColumnInfo(name = "poster")
-    val poster: String
+    val poster: String,
+
+    @ColumnInfo(name = "fetched_before")
+    var fetchedBefore: Boolean = false
 )
