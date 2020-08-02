@@ -13,13 +13,13 @@ import retrofit2.http.Query
 
 interface MovieApi {
 
-    @GET
+    @GET(".")
     fun search(
         @Query("apiKey") apiKey: String = "3e974fca",
         @Query("s") s: String
     ): Single<Response<SearchResult>>
 
-    @GET
+    @GET(".")
     fun getMovieDetail(
         @Query("apiKey") apiKey: String = "3e974fca",
         @Query("i") id: String
