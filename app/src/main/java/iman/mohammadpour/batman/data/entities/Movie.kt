@@ -32,47 +32,47 @@ data class Movie(
 
     @SerializedName("Rated")
     @ColumnInfo(name = "rated")
-    val rated: String,
+    var rated: String?,
 
     @SerializedName("Released")
     @ColumnInfo(name = "released")
-    val released: String,
+    var released: String?,
 
     @SerializedName("Runtime")
     @ColumnInfo(name = "runtime")
-    val runtime: String,
+    var runtime: String?,
 
     @SerializedName("Genre")
     @ColumnInfo(name = "genre")
-    val genre: String,
+    var genre: String?,
 
     @SerializedName("Director")
     @ColumnInfo(name = "director")
-    val director: String,
+    var director: String?,
 
     @SerializedName("Writer")
     @ColumnInfo(name = "writer")
-    val writer: String,
+    var writer: String?,
 
     @SerializedName("Actors")
     @ColumnInfo(name = "actors")
-    val actors: String,
+    var actors: String?,
 
     @SerializedName("Plot")
     @ColumnInfo(name = "plot")
-    val plot: String,
+    var plot: String?,
 
     @SerializedName("Language")
     @ColumnInfo(name = "language")
-    val language: String,
+    var language: String?,
 
     @SerializedName("Country")
     @ColumnInfo(name = "country")
-    val country: String,
+    var country: String?,
 
     @SerializedName("Awards")
     @ColumnInfo(name = "awards")
-    val awards: String,
+    var awards: String?,
 
     @SerializedName("Poster")
     @ColumnInfo(name = "poster")
@@ -80,19 +80,19 @@ data class Movie(
 
     @SerializedName("Ratings")
     @ColumnInfo(name = "ratings")
-    val ratings: List<Rating>, // has converter
+    var ratings: List<Rating>?, // has converter
 
     @SerializedName("Metascore")
     @ColumnInfo(name = "metascore")
-    val metascore: String,
+    var metascore: String?,
 
     @SerializedName("imdbRating")
     @ColumnInfo(name = "imdb_rating")
-    val imdbRating: String,
+    var imdbRating: String?,
 
     @SerializedName("imdbVotes")
     @ColumnInfo(name = "imdb_votes")
-    val imdbVotes: String,
+    var imdbVotes: String?,
 
     @SerializedName("Type")
     @ColumnInfo(name = "type")
@@ -100,21 +100,21 @@ data class Movie(
 
     @SerializedName("DVD")
     @ColumnInfo(name = "dvd")
-    val dvd: String,
+    var dvd: String?,
 
     @SerializedName("BoxOffice")
     @ColumnInfo(name = "box_office")
-    val boxOffice: String,
+    var boxOffice: String?,
 
     @SerializedName("Production")
     @ColumnInfo(name = "production")
-    val production: String,
+    var production: String?,
 
     @SerializedName("Website")
     @ColumnInfo(name = "website")
-    val website: String,
+    var website: String?,
 
     @SerializedName("Response")
     @ColumnInfo(name = "response")
-    val response: String
+    var response: String?
 ) : Rsp()
