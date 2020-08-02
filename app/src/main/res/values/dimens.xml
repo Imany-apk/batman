@@ -1,3 +1,5 @@
 <resources>
 
+    <dimen name="app_bar_height">300dp</dimen>
+    <dimen name="ts_movie_title">32sp</dimen>
 </resources>

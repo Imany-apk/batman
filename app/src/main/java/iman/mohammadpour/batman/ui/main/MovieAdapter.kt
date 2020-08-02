@@ -13,15 +13,21 @@ import kotlinx.android.synthetic.main.adapter_movie.view.*
  *  created by Iman Mohammadpour at 2020/Aug/02
  */
 
-class MovieAdapter : RecyclerView.Adapter<MovieAdapter.VH>() {
+class MovieAdapter(
+    private val listener: MovieItemClickListener
+) : RecyclerView.Adapter<MovieAdapter.VH>() {
 
     private var movies = listOf<MovieSummary>()
 
 
-    class VH(view: View) : RecyclerView.ViewHolder(view) {
+    inner class VH(view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(movie: MovieSummary) = with(itemView) {
             img_poster.load(movie.poster)
+
+            setOnClickListener {
+                listener.onMovieClicked(movie, img_poster, img_poster.transitionName)
+            }
         }
     }
 

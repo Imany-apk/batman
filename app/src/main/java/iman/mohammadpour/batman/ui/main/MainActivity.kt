@@ -1,18 +1,22 @@
 package iman.mohammadpour.batman.ui.main
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import iman.mohammadpour.batman.R
 import iman.mohammadpour.batman.data.entities.MovieSummary
+import iman.mohammadpour.batman.ui.detail.DetailActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MovieItemClickListener {
 
     private val listLM by lazy {
         StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
     }
-    private val movieAdapter by lazy { MovieAdapter() }
+    private val movieAdapter by lazy { MovieAdapter(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,6 +86,21 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+
+    }
+
+    override fun onMovieClicked(movie: MovieSummary, img: ImageView, transitionName: String) {
+
+        Intent(this, DetailActivity::class.java).apply {
+            putExtra(DetailActivity.EXTRA_MOVIE_ID, movie.poster)
+
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this@MainActivity,
+                img,
+                transitionName
+            )
+            startActivity(this, options.toBundle());
+        }
 
     }
 
