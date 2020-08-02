@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Batman</string>
     <string name="poster_transition_name">poster_transition_name</string>
+    <string name="year">Year</string>
 </resources>

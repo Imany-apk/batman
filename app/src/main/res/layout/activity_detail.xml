@@ -23,15 +23,31 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="20dp"
+                android:ellipsize="marquee"
+                android:singleLine="true"
                 android:text="Batman"
                 android:textColor="@color/movie_title"
-                android:textSize="@dimen/ts_movie_title"
+                android:textSize="@dimen/ts_movie_title_large"
                 app:layout_constraintBottom_toBottomOf="@id/img_poster"
                 app:layout_constraintStart_toStartOf="@id/img_poster" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/year"
+                android:textColor="@color/default_text"
+                android:textSize="@dimen/ts_default_text"
+                app:layout_constraintStart_toStartOf="@id/img_poster"
+                app:layout_constraintTop_toBottomOf="@id/img_poster" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

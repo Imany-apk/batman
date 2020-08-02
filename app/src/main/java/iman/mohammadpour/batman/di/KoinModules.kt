@@ -7,6 +7,7 @@ import iman.mohammadpour.batman.data.api.MovieApi
 import iman.mohammadpour.batman.data.dao.AppDatabase
 import iman.mohammadpour.batman.data.repositories.MovieRepository
 import iman.mohammadpour.batman.data.repositories.impl.MovieRepositoryImpl
+import iman.mohammadpour.batman.ui.detail.DetailViewModel
 import iman.mohammadpour.batman.ui.main.MainViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -32,6 +33,7 @@ val repositoryModule = module {
 val viewModelModule = module {
 
     viewModel { MainViewModel(get()) }
+    viewModel { DetailViewModel(get()) }
 
 }
 

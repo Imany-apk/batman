@@ -50,7 +50,9 @@ class MainActivity : AppCompatActivity(), MovieItemClickListener {
     override fun onMovieClicked(movie: MovieSummary, img: ImageView, transitionName: String) {
 
         Intent(this, DetailActivity::class.java).apply {
-            putExtra(DetailActivity.EXTRA_MOVIE_ID, movie.poster)
+            putExtra(DetailActivity.EXTRA_MOVIE_ID, movie.imdbID)
+            putExtra(DetailActivity.EXTRA_MOVIE_POSTER, movie.poster)
+            putExtra(DetailActivity.EXTRA_MOVIE_POSTER_TRANSITION_NAME, transitionName)
 
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 this@MainActivity,
