@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName
 /**
  *  created by Iman Mohammadpour at 2020/Aug/02
  */
-
 data class MovieSummary(
 
     @SerializedName("imdbID")
