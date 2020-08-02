@@ -117,4 +117,4 @@ data class Movie(
     @SerializedName("Response")
     @ColumnInfo(name = "response")
     val response: String
-)
+) : Rsp()

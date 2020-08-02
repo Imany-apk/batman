@@ -16,7 +16,7 @@ interface MovieApi {
     @GET
     fun search(
         @Query("apiKey") apiKey: String = "3e974fca",
-        @Query("s") s: String = "batman"
+        @Query("s") s: String
     ): Single<Response<SearchResult>>
 
     @GET

@@ -16,10 +16,10 @@ import iman.mohammadpour.batman.data.entities.MovieSummary
 interface MovieDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE, entity = Movie::class)
-    fun save(venues: List<MovieSummary>)
+    fun save(movies: List<MovieSummary>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun save(venues: Movie)
+    fun save(movie: Movie)
 
     @Query("SELECT * FROM movies")
     fun findAll(): LiveData<List<MovieSummary>>
