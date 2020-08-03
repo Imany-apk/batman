@@ -66,14 +66,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_year"
+                    style="@style/Data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:layout_marginEnd="@dimen/margin_large"
                     android:paddingStart="@dimen/padding_default"
                     android:paddingEnd="@dimen/padding_default"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cns_poster"
                     tools:text="Year" />
@@ -100,35 +99,32 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_director_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/director"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/cns_poster" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_director"
+                    style="@style/Data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_director_label"
                     tools:text="Zack Snyder" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_production_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginStart="@dimen/margin_large"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/production"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintBottom_toBottomOf="@id/txt_production"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintStart_toStartOf="parent"
@@ -136,12 +132,11 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_production"
+                    style="@style/Data"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/margin_small"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toStartOf="@id/txt_type"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_production_label"
@@ -149,113 +144,103 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_released_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/released"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/txt_production_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_released"
+                    style="@style/Data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_released_label"
                     tools:text="25 Mar 2016" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_duration_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/duration"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/txt_released_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_duration"
+                    style="@style/Data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_duration_label"
                     tools:text="152 min" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_box_office_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/margin_small"
                     android:text="@string/box_office"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toStartOf="@id/txt_box_office"
                     app:layout_constraintTop_toTopOf="@id/txt_duration" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_box_office"
+                    style="@style/Data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/margin_large"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/txt_box_office_label"
                     tools:text="$293,792,936" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_language_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/language"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/txt_duration_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_language"
+                    style="@style/Data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_language_label"
                     tools:text="English (USA)" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_genre_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/genre"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintBottom_toBottomOf="@id/txt_genre"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/txt_language_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_genre"
+                    style="@style/Data"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/padding_default"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_genre_label"
@@ -263,24 +248,22 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_writer_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/writer"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintBottom_toBottomOf="@id/txt_writer"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/txt_genre_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_writer"
+                    style="@style/Data"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/padding_default"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_writer_label"
@@ -289,24 +272,22 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_stars_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/stars"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintBottom_toBottomOf="@id/txt_stars"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/txt_writer_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_stars"
+                    style="@style/Data"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/padding_default"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_stars_label"
@@ -314,24 +295,22 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_plot_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/plot"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintBottom_toBottomOf="@id/txt_plot"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/txt_stars_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_plot"
+                    style="@style/Data"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_small"
                     android:layout_marginEnd="@dimen/padding_default"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_plot_label"
@@ -340,24 +319,22 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_awards_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/awards"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintBottom_toBottomOf="@id/txt_awards"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/txt_plot_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_awards"
+                    style="@style/Data"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/padding_small"
                     android:layout_marginEnd="@dimen/padding_default"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/barrier"
                     app:layout_constraintTop_toTopOf="@id/txt_awards_label"
@@ -365,24 +342,22 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_ratings_label"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/ratings"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toStartOf="@id/barrier"
                     app:layout_constraintTop_toBottomOf="@id/txt_awards_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_ratings_label_imdb"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:gravity="center"
                     android:text="@string/imdb"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toStartOf="@id/txt_ratings_label_rotten_tomatoes"
                     app:layout_constraintHorizontal_chainStyle="spread"
                     app:layout_constraintStart_toStartOf="parent"
@@ -390,13 +365,12 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_ratings_label_rotten_tomatoes"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:gravity="center"
                     android:text="@string/rotten_tomatoes"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toStartOf="@id/txt_ratings_label_metacritic"
                     app:layout_constraintStart_toEndOf="@id/txt_ratings_label_imdb"
                     app:layout_constraintTop_toBottomOf="@id/txt_ratings_label" />
@@ -404,23 +378,21 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_ratings_label_metacritic"
+                    style="@style/Label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:gravity="center"
                     android:text="@string/metacritic"
-                    android:textColor="@color/movie_label"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/txt_ratings_label_rotten_tomatoes"
                     app:layout_constraintTop_toBottomOf="@id/txt_ratings_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_ratings_imdb"
+                    style="@style/Data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="@id/txt_ratings_label_imdb"
                     app:layout_constraintStart_toStartOf="@id/txt_ratings_label_imdb"
                     app:layout_constraintTop_toBottomOf="@id/txt_ratings_label_imdb"
@@ -429,10 +401,9 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_ratings_rotten_tomatoes"
+                    style="@style/Data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="@id/txt_ratings_label_rotten_tomatoes"
                     app:layout_constraintStart_toStartOf="@id/txt_ratings_label_rotten_tomatoes"
                     app:layout_constraintTop_toBottomOf="@id/txt_ratings_label_rotten_tomatoes"
@@ -441,10 +412,9 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_ratings_metacritic"
+                    style="@style/Data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/movie_subtitle"
-                    android:textSize="@dimen/ts_default_text"
                     app:layout_constraintEnd_toEndOf="@id/txt_ratings_label_metacritic"
                     app:layout_constraintStart_toStartOf="@id/txt_ratings_label_metacritic"
                     app:layout_constraintTop_toBottomOf="@id/txt_ratings_label_metacritic"
