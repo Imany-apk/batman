@@ -1,5 +1,6 @@
 package iman.mohammadpour.batman.ui.main
 
+import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +19,7 @@ class MovieAdapter(
 ) : RecyclerView.Adapter<MovieAdapter.VH>() {
 
     private var movies = listOf<MovieSummary>()
-
+    private var lastClickTime = 0L
 
     inner class VH(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -26,11 +27,18 @@ class MovieAdapter(
             img_poster.load(movie.poster)
             img_poster.transitionName = "posterTransitionName#${movie.imdbID}"
             txt_title.text = movie.title
+            txt_title.transitionName = "titleTransitionName#${movie.imdbID}"
             txt_title.isSelected = true
             txt_year.text = movie.year
+            txt_year.transitionName = "yearTransitionName#${movie.imdbID}"
 
             setOnClickListener {
-                listener.onMovieClicked(movie, img_poster)
+                if (SystemClock.elapsedRealtime() - lastClickTime < 1000)
+                    return@setOnClickListener
+
+                lastClickTime = SystemClock.elapsedRealtime()
+
+                listener.onMovieClicked(movie, img_poster, txt_title, txt_year)
             }
         }
     }

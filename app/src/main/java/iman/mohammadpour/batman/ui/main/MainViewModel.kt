@@ -25,14 +25,17 @@ class MainViewModel(
 
 
     fun onViewCreated(hasInternetAccess: Boolean) {
-        repository.findAll().tell { _onLiveMovies.postValue(it) }
+        repository.findAll().tell {
+            if (it.isNotEmpty())
+                _onLiveMovies.value = it
+        }
         if (!hasInternetAccess) {
-            _onMoviesError.postValue("There is no Internet connection")
+            _onMoviesError.value = "There is no Internet connection"
             return
         }
         repository.search("batman").tell {
             if (it is MovieResult.Error) {
-                _onMoviesError.postValue(it.e.message)
+                _onMoviesError.value = it.e.message
             }
         }
     }

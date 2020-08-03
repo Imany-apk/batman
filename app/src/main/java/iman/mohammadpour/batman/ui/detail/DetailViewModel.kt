@@ -31,19 +31,19 @@ class DetailViewModel(
     ) {
 
         repository.findById(imdbID).tell {
-            _onLiveMovie.postValue(it)
+            _onLiveMovie.value = it
         }
 
         if (fromLocal)
             return
 
         if (!hasInternetAccess) {
-            _onMovieError.postValue("There is no Internet connection")
+            _onMovieError.value = "There is no Internet connection"
             return
         }
         repository.getMovie(imdbID).tell {
             if (it is MovieResult.Error) {
-                _onMovieError.postValue(it.e.message)
+                _onMovieError.value = it.e.message
             }
         }
     }

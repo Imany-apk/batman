@@ -111,6 +111,10 @@ data class Movie(
     @ColumnInfo(name = "box_office")
     var boxOffice: String?,
 
+    @SerializedName("totalSeasons")
+    @ColumnInfo(name = "total_seasons")
+    var totalSeasons: String?,
+
     @SerializedName("Production")
     @ColumnInfo(name = "production")
     var production: String?,
@@ -125,4 +129,7 @@ data class Movie(
 
     @ColumnInfo(name = "fetched_before")
     var fetchedBefore: Boolean = false
-) : Rsp()
+) : Rsp() {
+
+    fun isMovie() = type == "movie"
+}

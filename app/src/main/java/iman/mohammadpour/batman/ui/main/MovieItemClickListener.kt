@@ -1,6 +1,6 @@
 package iman.mohammadpour.batman.ui.main
 
-import android.widget.ImageView
+import android.view.View
 import iman.mohammadpour.batman.data.entities.MovieSummary
 
 /**
@@ -9,6 +9,6 @@ import iman.mohammadpour.batman.data.entities.MovieSummary
 
 interface MovieItemClickListener {
 
-    fun onMovieClicked(movie: MovieSummary, img: ImageView)
+    fun onMovieClicked(movie: MovieSummary, vararg views: View)
 
 }

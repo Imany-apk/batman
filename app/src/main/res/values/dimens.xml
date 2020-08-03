@@ -8,4 +8,12 @@
     <dimen name="list_item_text_margin">12dp</dimen>
     <dimen name="list_item_padding">2dp</dimen>
     <dimen name="list_item_margin">2dp</dimen>
+    <dimen name="padding_default">16dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="height_title">200dp</dimen>
+    <dimen name="title_transition_x_default">100dp</dimen>
 </resources>
