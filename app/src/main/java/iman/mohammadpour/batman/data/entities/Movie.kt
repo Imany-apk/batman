@@ -1,13 +1,135 @@
 package iman.mohammadpour.batman.data.entities
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.TypeConverters
+import com.google.gson.annotations.SerializedName
+import iman.mohammadpour.batman.data.entities.converters.RatingConverter
+
 /**
  *  created by Iman Mohammadpour at 2020/Aug/02
  */
 
-data class Movie(
-    val Title: String,
-    val Year: String,
-    val imdbID: String,
-    val Type: String,
-    val Poster: String
+@Entity(
+    tableName = "movies",
+    primaryKeys = ["id", "imdb_id"]
 )
+@TypeConverters(
+    RatingConverter::class
+)
+data class Movie(
+
+    @SerializedName("id")
+    @ColumnInfo(name = "id")
+    val id: Long = 1,
+
+    @SerializedName("imdbID")
+    @ColumnInfo(name = "imdb_id")
+    val imdbID: String,
+
+    @SerializedName("Title")
+    @ColumnInfo(name = "title")
+    val title: String,
+
+    @SerializedName("Year")
+    @ColumnInfo(name = "year")
+    val year: String,
+
+    @SerializedName("Rated")
+    @ColumnInfo(name = "rated")
+    var rated: String?,
+
+    @SerializedName("Released")
+    @ColumnInfo(name = "released")
+    var released: String?,
+
+    @SerializedName("Runtime")
+    @ColumnInfo(name = "runtime")
+    var runtime: String?,
+
+    @SerializedName("Genre")
+    @ColumnInfo(name = "genre")
+    var genre: String?,
+
+    @SerializedName("Director")
+    @ColumnInfo(name = "director")
+    var director: String?,
+
+    @SerializedName("Writer")
+    @ColumnInfo(name = "writer")
+    var writer: String?,
+
+    @SerializedName("Actors")
+    @ColumnInfo(name = "actors")
+    var actors: String?,
+
+    @SerializedName("Plot")
+    @ColumnInfo(name = "plot")
+    var plot: String?,
+
+    @SerializedName("Language")
+    @ColumnInfo(name = "language")
+    var language: String?,
+
+    @SerializedName("Country")
+    @ColumnInfo(name = "country")
+    var country: String?,
+
+    @SerializedName("Awards")
+    @ColumnInfo(name = "awards")
+    var awards: String?,
+
+    @SerializedName("Poster")
+    @ColumnInfo(name = "poster")
+    val poster: String,
+
+    @SerializedName("Ratings")
+    @ColumnInfo(name = "ratings")
+    var ratings: List<Rating>?, // has converter
+
+    @SerializedName("Metascore")
+    @ColumnInfo(name = "metascore")
+    var metascore: String?,
+
+    @SerializedName("imdbRating")
+    @ColumnInfo(name = "imdb_rating")
+    var imdbRating: String?,
+
+    @SerializedName("imdbVotes")
+    @ColumnInfo(name = "imdb_votes")
+    var imdbVotes: String?,
+
+    @SerializedName("Type")
+    @ColumnInfo(name = "type")
+    val type: String,
+
+    @SerializedName("DVD")
+    @ColumnInfo(name = "dvd")
+    var dvd: String?,
+
+    @SerializedName("BoxOffice")
+    @ColumnInfo(name = "box_office")
+    var boxOffice: String?,
+
+    @SerializedName("totalSeasons")
+    @ColumnInfo(name = "total_seasons")
+    var totalSeasons: String?,
+
+    @SerializedName("Production")
+    @ColumnInfo(name = "production")
+    var production: String?,
+
+    @SerializedName("Website")
+    @ColumnInfo(name = "website")
+    var website: String?,
+
+    @SerializedName("Response")
+    @ColumnInfo(name = "response")
+    var response: String?,
+
+    @ColumnInfo(name = "fetched_before")
+    var fetchedBefore: Boolean = false
+) : Rsp() {
+
+    fun isMovie() = type == "movie"
+}
